@@ -5,6 +5,10 @@ class Kernel:
     rbf_kernel = "rbf"
     linear_kernel = "linear"
     hyperparameters = {}
+    
+    @classmethod
+    def get_param(cls, param, default):
+        return cls.hyperparameters.get(param, default)
 
     @classmethod
     def kernel(cls, kernel_type: str, **kwargs):
